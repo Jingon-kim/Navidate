@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables */
+:root {
+  --primary: #FF6B9D;
+  --primary-dark: #E55A8A;
+  --secondary: #4ECDC4;
+  --accent: #FFE66D;
+  --background: #FFF5F7;
+  --text: #2D3436;
+  --text-light: #636E72;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Custom Utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}

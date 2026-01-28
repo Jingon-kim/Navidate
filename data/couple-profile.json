@@ -1,0 +1,71 @@
+{
+  "coupleId": "couple_001",
+  "createdAt": "2025-01-24",
+  "relationshipStartDate": null,
+
+  "partnerA": {
+    "name": null,
+    "preferences": {
+      "food": {
+        "likes": [],
+        "dislikes": [],
+        "allergies": []
+      },
+      "activities": {
+        "likes": [],
+        "dislikes": []
+      },
+      "atmosphere": {
+        "preferred": [],
+        "avoid": []
+      }
+    },
+    "constraints": {
+      "budget": null,
+      "mobility": null,
+      "schedule": {}
+    }
+  },
+
+  "partnerB": {
+    "name": null,
+    "preferences": {
+      "food": {
+        "likes": [],
+        "dislikes": [],
+        "allergies": []
+      },
+      "activities": {
+        "likes": [],
+        "dislikes": []
+      },
+      "atmosphere": {
+        "preferred": [],
+        "avoid": []
+      }
+    },
+    "constraints": {
+      "budget": null,
+      "mobility": null,
+      "schedule": {}
+    }
+  },
+
+  "shared": {
+    "preferredRegions": [],
+    "budgetRange": {
+      "min": null,
+      "max": null
+    },
+    "transportation": [],
+    "anniversaries": []
+  },
+
+  "learningWeights": {
+    "foodCategories": {},
+    "activityTypes": {},
+    "priceRanges": {},
+    "timeSlots": {},
+    "locations": {}
+  }
+}

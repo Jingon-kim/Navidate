@@ -1,0 +1,27 @@
+{
+  "name": "navidate",
+  "version": "0.1.0",
+  "description": "커플 전용 개인화 데이트 추천 서비스",
+  "main": "agents/pm-agent.ts",
+  "scripts": {
+    "pm": "npx ts-node agents/pm-agent.ts",
+    "pm:dev": "npx tsx agents/pm-agent.ts",
+    "tpm": "npx ts-node agents/tpm-agent.ts",
+    "tpm:dev": "npx tsx agents/tpm-agent.ts",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
