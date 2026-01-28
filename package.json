@@ -8,6 +8,8 @@
     "pm:dev": "npx tsx agents/pm-agent.ts",
     "tpm": "npx ts-node agents/tpm-agent.ts",
     "tpm:dev": "npx tsx agents/tpm-agent.ts",
+    "security": "npx ts-node agents/security-agent.ts",
+    "security:dev": "npx tsx agents/security-agent.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
