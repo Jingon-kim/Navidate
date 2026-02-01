@@ -2,17 +2,18 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../stores/authStore'
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [nickname, setNickname] = useState('')
   const navigate = useNavigate()
-  const { login, isLoading, error, clearError } = useAuthStore()
+  const { signup, isLoading, error, clearError } = useAuthStore()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     clearError()
 
-    const success = await login(email, password)
+    const success = await signup(email, password, nickname)
     if (success) {
       navigate('/couple-link')
     }
@@ -22,7 +23,7 @@ export default function Login() {
     <div className="min-h-screen flex flex-col justify-center p-6">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-[var(--primary)] mb-2">NaviDate</h1>
-        <p className="text-[var(--text-light)]">둘이 함께 고르는 데이트</p>
+        <p className="text-[var(--text-light)]">새로운 데이트의 시작</p>
       </div>
 
       {error && (
@@ -32,6 +33,16 @@ export default function Login() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <input
+            type="text"
+            placeholder="닉네임"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--primary)] focus:outline-none"
+            required
+          />
+        </div>
         <div>
           <input
             type="email"
@@ -50,6 +61,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--primary)] focus:outline-none"
             required
+            minLength={6}
           />
         </div>
         <button
@@ -57,34 +69,17 @@ export default function Login() {
           disabled={isLoading}
           className="w-full py-3 bg-[var(--primary)] text-white rounded-xl font-semibold hover:bg-[var(--primary-dark)] transition-colors disabled:opacity-50"
         >
-          {isLoading ? '로그인 중...' : '로그인'}
+          {isLoading ? '가입 중...' : '회원가입'}
         </button>
       </form>
 
       <div className="mt-6 text-center">
         <p className="text-[var(--text-light)]">
-          계정이 없으신가요?{' '}
-          <Link to="/signup" className="text-[var(--primary)] font-semibold">
-            회원가입
+          이미 계정이 있으신가요?{' '}
+          <Link to="/login" className="text-[var(--primary)] font-semibold">
+            로그인
           </Link>
         </p>
-      </div>
-
-      <div className="mt-8">
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-[var(--background)] text-[var(--text-light)]">또는</span>
-          </div>
-        </div>
-
-        <div className="mt-4 space-y-3">
-          <button className="w-full py-3 border border-gray-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
-            <span>🔵</span> 카카오로 시작하기
-          </button>
-        </div>
       </div>
     </div>
   )
