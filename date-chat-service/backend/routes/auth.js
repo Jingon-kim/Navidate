@@ -31,7 +31,8 @@ router.post('/signup', async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({ error: '서버 오류가 발생했습니다.' });
+    console.error('Signup error:', error);
+    res.status(500).json({ error: '서버 오류가 발생했습니다.', detail: error.message });
   }
 });
 
